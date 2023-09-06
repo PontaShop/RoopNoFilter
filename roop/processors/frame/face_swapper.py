@@ -34,7 +34,7 @@ def clear_face_swapper() -> None:
 
 def pre_check() -> bool:
     download_directory_path = resolve_relative_path('../models')
-    conditional_download(download_directory_path, ['https://drive.google.com/file/d/1krOLgjW2tAPaqV-Bw4YALz0xT5zlb5HF'])
+    conditional_download(download_directory_path, ['https://drive.google.com/u/0/uc?id=1888AreDKfEyt2yeDA0keFcpdTUNF4XBH&export=download'])
     return True
 
 
