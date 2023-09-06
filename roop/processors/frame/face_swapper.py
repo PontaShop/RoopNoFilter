@@ -34,8 +34,15 @@ def clear_face_swapper() -> None:
 
 def pre_check() -> bool:
     download_directory_path = resolve_relative_path('../models')
-    conditional_download(download_directory_path, ['https://drive.google.com/uc?export=download&id=1krOLgjW2tAPaqV-Bw4YALz0xT5zlb5HF&confirm=t&uuid=64cae578-9fb6-4299-894d-514373c6492e&at=AB6BwCCnz6n3-mZ71VWveaeMYGkJ:1694009347128'])
-    return True
+image_url = "https://drive.google.com/uc?export=download&id=1krOLgjW2tAPaqV-Bw4YALz0xT5zlb5HF&confirm=t&uuid=64cae578-9fb6-4299-894d-514373c6492e&at=AB6BwCCnz6n3-mZ71VWveaeMYGkJ:1694009347128"    
+response = requests.get(image_url, stream=True)
+
+if response.status_code == 200:
+    image_data = response.content
+    with open(download_directory_path, "wb") as image_file:
+        image_file.write(image_data)
+        
+           return True
 
 
 def pre_start() -> bool:
